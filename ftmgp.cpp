@@ -81,6 +81,7 @@ JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
         const JNINativeInterface *pInterface = env->functions;
         MSHookFunction((void *) pInterface->RegisterNatives, (void *) $RegiserNatives,
                        (void **) &RegiserNatives);
+        isHooked=true;
     }
 
     return result;
